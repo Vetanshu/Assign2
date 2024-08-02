@@ -27,30 +27,28 @@ const App = () => {
 
   return (
     <QuoteProvider>
-        <div className='bg-gradient-to-bl from-slate-900 via-purple-900 to-slate-900 '>
-      <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-4 text-center py-2 text-white">Ron Swanson Quotes</h1>
-        <div className=' flex justify-center items-center h-[480px] w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 '>
-        <div className="flex justify-center">
-          {quotes.length > 0 && <QuoteCard quotes={quotes} />}
+      <div className='bg-gradient-to-bl from-slate-900 via-purple-900 to-slate-900 h-full xl:h-screen relative'>
+        <div className="container mx-auto p-4">
+          <h1 className="text-2xl font-bold mb-4 text-center py-4 xl:text-4xl sm:text-3xl text-white">Ron Swanson Quotes</h1>
+          <div className="flex justify-center bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 xl:h-[600px] p-8">
+            {quotes.length > 0 && <QuoteCard quotes={quotes} />}
+          </div>
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={fetchQuotes}
+              className="bg-violet-700 hover:bg-violet-800 text-white font-semibold p-2 text-sm rounded mr-4 xl:p-6 xl:text-xl sm:font-bold sm:p-3 sm:text-base"
+            >
+              Get New Quotes
+            </button>
+            <button
+              onClick={toggleSavedQuotes}
+              className="bg-fuchsia-600 hover:bg-fuchsia-800 text-white font-semibold sm:font-bold p-2 px-3 text-sm rounded-lg xl:p-6 xl:text-xl sm:text-base"
+            >
+              {showSavedQuotes ? 'Hide Saved Quotes' : 'Show Saved Quotes'}
+            </button>
+          </div>
+          {showSavedQuotes && <QuoteList toggleSavedQuotes={toggleSavedQuotes} />}
         </div>
-        </div>
-        <div className="flex justify-center mt-5">
-          <button
-            onClick={fetchQuotes}
-            className="bg-violet-800 hover:bg-violet-900 text-white font-bold py-2 px-4 rounded mr-4"
-          >
-            Get New Quotes
-          </button>
-          <button
-            onClick={toggleSavedQuotes}
-            className="bg-rose-800 hover:bg-rose-950 text-white font-bold py-2 px-4 rounded"
-          >
-            {showSavedQuotes ? 'Hide Saved Quotes' : 'Show Saved Quotes'}
-          </button>
-        </div>
-        {showSavedQuotes && <QuoteList />}
-      </div>
       </div>
     </QuoteProvider>
   );

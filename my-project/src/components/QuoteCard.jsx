@@ -9,16 +9,18 @@ const QuoteCard = ({ quotes }) => {
   };
 
   return (
-    <div className="flex flex-wrap justify-center ">
-      {quotes.map((quote, index) => (
-        <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg p-4 m-2 bg-[#2E1065]">
-          <p className="text-white text-base">{quote}</p>
-          <button
-            onClick={() => saveQuote(quote)}
-            className="bg-gradient-to-t from-blue-600 via-violet-700 to-fuchsia-800 hover:bg-gradient-to-b from-blue-600 via-violet-700 to-fuchsia-800 text-white font-bold py-2 px-4 rounded mt-4 transition-all ease-in-out hover:scale-105"
-          >
-            Save to List
-          </button>
+    <div className="flex flex-wrap justify-center">
+      {quotes.slice(0, 5).map((quote, index) => (
+        <div key={index} className="w-full sm:w-1/2 lg:w-1/5 p-2">
+          <div className="max-w-sm rounded overflow-hidden shadow-lg xl:p-10 p-4 bg-violet-800">
+            <p className="text-white text-sm  sm:text-base xl:text-lg">{quote}</p>
+            <button
+              onClick={() => saveQuote(quote)}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 xl:py-2 xl:px-4 rounded mt-4 text-xs sm:text-base xl:text-lg"
+            >
+              Save to List
+            </button>
+          </div>
         </div>
       ))}
     </div>
