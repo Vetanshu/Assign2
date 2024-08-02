@@ -9,7 +9,7 @@ const QuoteList = ({ toggleSavedQuotes }) => {
   };
 
   return (
-    <div className="xl:mt-5 xl:ml-12 mr-4 mt-4 absolute top-2 bg-gradient-to-br from-violet-700 via-purple-800 to-indigo-900 w-[290px] sm:w-[600px] sm:mt-8 sm:ml-1 xl:w-10/12 h-[500px] xl:h-[660px] shadow-2xl rounded-2xl px-2 xl:px-10 overflow-scroll ">
+    <div className="xl:mt-5 xl:ml-12 mr-4 mt-4 absolute top-2 bg-gradient-to-br from-violet-700 via-purple-800 to-indigo-900 w-[290px] sm:w-[600px] sm:mt-8 sm:ml-1 xl:w-10/12 h-[500px] xl:h-[660px] shadow-2xl rounded-2xl px-2 xl:px-10 overflow-scroll md:mx-20 md:h-[600px] md:w-4/5">
       <button
         onClick={toggleSavedQuotes}
         className="absolute top-4 right-4 bg-red-500 hover:bg-red-700 text-white font-bold sm:py-2 sm:px-4 rounded-full text-sm sm:text-lg  px-3  py-2"
