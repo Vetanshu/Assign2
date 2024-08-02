@@ -30,13 +30,13 @@ const App = () => {
       <div className='bg-gradient-to-bl from-slate-900 via-purple-900 to-slate-900 h-full md:min-h-lvh xl:h-screen relative'>
         <div className="container mx-auto p-4">
           <h1 className="text-2xl font-bold mb-4 text-center py-4 xl:text-4xl sm:text-3xl text-white">Ron Swanson Quotes</h1>
-          <div className="flex justify-center bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 xl:h-[600px] p-8">
+          <div className="flex justify-center bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 xl:h-[400px] p-8 ">
             {quotes.length > 0 && <QuoteCard quotes={quotes} />}
           </div>
           <div className="flex justify-center mt-8">
             <button
               onClick={fetchQuotes}
-              className="bg-violet-700 hover:bg-violet-800 text-white font-semibold p-2 text-sm rounded mr-4 xl:p-6 xl:text-xl sm:font-bold sm:p-3 sm:text-base"
+              className="bg-violet-700 hover:bg-violet-800 text-white font-semibold p-2 text-sm rounded mr-4 xl:p-4 xl:text-xl sm:font-bold sm:p-3 sm:text-base"
             >
               Get New Quotes
             </button>
